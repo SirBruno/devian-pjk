@@ -8,7 +8,7 @@ class App extends Component {
   }
 
   handleClick = () => {
-    axios.get('http://localhost:5000').then(res => console.log(res));
+    axios.get('http://localhost:5000').then(res => this.setState({ text: res.data.access_token }));
   }
 
   render() {
