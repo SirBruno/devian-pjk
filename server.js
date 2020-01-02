@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const axios = require('axios');
-const router = express.Router();
-const testx = require('./testx');
+const bodyParser = require('body-parser');
+const getAccessToken = require('./getAccessToken');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors())
 
-app.get('/', testx.getStuff);
+app.get('/', getAccessToken.sendResponse);
 
 app.listen(5000, () => {
     console.log("Running on http://localhost:5000")
