@@ -37,7 +37,13 @@ class App extends Component {
         <div className="image-grid">
           {this.state.deviantData.map(
             data => data.content ?
-              <a href={data.url} target="_blank" rel="noopener noreferrer" key={data.content.src} className="image-container content-main">
+              <a
+                href={data.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={data.content.src}
+                className="image-container content-main"
+              >
                 <div className="content-data">
                   <p className="content-title"> {data.title} </p>
                 </div>
